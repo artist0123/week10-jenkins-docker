@@ -12,7 +12,6 @@ pipeline {
         stage('Initialize') {
             steps {
                 echo 'Initial : Delete  containers and images'
-                echo "Current path is ${pwd()}"
                 sh 'docker stop ${DOCKER_CONTAINER_NAME} || true'
                 sh 'docker rm ${DOCKER_CONTAINER_NAME} || true'
                 sh 'docker rmi ${DOCKER_IMAGE_NAME} || true'
